@@ -1,0 +1,50 @@
+p {
+    color: black;
+    font-style: italic;
+    text-align: center;
+    font-size: 50px;
+}
+.body{
+    background-color: #D4EFDF  ;
+}
+.whole_body{
+    background-color: #CACFD2; 
+}
+.all {
+    background-color: #76D7C4;
+}
+
+.nav-item {
+    display: inline;
+}
+
+.ng-valid[required],
+.ng-valid.required {
+    border-left: 5px solid #42a948;
+    /*green*/
+}
+
+.ng-invalid:not(form) {
+    border-left: 5px solid #a94442;
+    /*red*/
+}
+
+.icon {
+    font-size: 40px;
+    margin-right: 10px;
+}
+
+.pro {
+    margin-left: 20px;
+    margin-bottom: 40px;
+}
+
+.labels {
+    font-style: italic;
+    font-size: 20px;
+}
+
+span {
+    font-size: 12px;
+    color: red;
+}

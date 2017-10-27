@@ -1,0 +1,354 @@
+<div class="whole_body">
+  <div class="body container">
+    <p>
+      <img style="width:500px;height:250px;" src="../assets/welcome.jpg">
+
+    </p>
+    <div class="container all">
+      <div class="row">
+        <div class="col-md-12 col-sm-6">
+          <h1 style="background-color:#17A589;padding-bottom: 20px;padding-top: 10px;">Please Fill The Information Below :
+            <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
+          </h1>
+
+          <form id="InputForm" (ngSubmit)="submitForm(form)" #form="ngForm">
+
+            <!--First Name-->
+            <div class="form-group">
+              <label class="labels " for="fname">First Name:</label>
+              <input class="form-control" type="text" placeholder="First Name" required pattern="[a-zA-Z ]*" minlength="3" name="fname"
+                required ngModel id="fname" #firstName="ngModel">
+
+              <div *ngIf="firstName.errors && (firstName.dirty || firstName.touched)" class="alert alert-info">
+                <div *ngIf="firstName.errors.required">
+                  First Name is required.
+                </div>
+
+                <div *ngIf="firstName.errors.pattern">
+                  First Name accept only characters.
+                </div>
+
+                <div *ngIf="firstName.errors.minlength">
+                  First Name should be more than 2 characters.
+                </div>
+
+              </div>
+            </div>
+
+            <!--Middle Name-->
+            <div class="form-group">
+              <label class="labels " for="mname">Middle Name:</label>
+              <input class="form-control" type="text" placeholder="Middle Name" required pattern="[a-zA-Z ]*" minlength="3" name="mname"
+                required ngModel id="mname" #midName="ngModel">
+
+              <div *ngIf="midName.errors && (midName.dirty || midName.touched)" class="alert alert-info">
+                <div *ngIf="midName.errors.required">
+                  Middle Name is required.
+                </div>
+
+                <div *ngIf="midName.errors.pattern">
+                  Middle Name accept only characters.
+                </div>
+
+                <div *ngIf="midName.errors.minlength">
+                  Middle Name should be more than 2 characters.
+                </div>
+
+              </div>
+            </div>
+
+            <!--last Name-->
+            <div class="form-group">
+              <label class="labels " for="lname">Last Name:</label>
+              <input class="form-control" type="text" placeholder="Last Name" required pattern="[a-zA-Z ]*" minlength="3" name="lname"
+                required ngModel id="lname" #lastName="ngModel">
+
+              <div *ngIf="lastName.errors && (lastName.dirty || lastName.touched)" class="alert alert-info">
+                <div *ngIf="lastName.errors.required">
+                  Last Name is required.
+                </div>
+
+                <div *ngIf="lastName.errors.pattern">
+                  Last Name accept only characters.
+                </div>
+
+                <div *ngIf="lastName.errors.minlength">
+                  Last Name should be more than 2 characters.
+                </div>
+
+              </div>
+            </div>
+            <!-- email-->
+            <div class="form-group">
+              <label class="labels " for="email">E-mail:</label>
+              <input class="form-control" type="email" placeholder="example@example.com" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+                type="email" name="email" required id="email" ngModel #eMail="ngModel">
+
+              <div *ngIf="eMail.errors && (eMail.dirty || eMail.touched)" class="alert alert-info">
+                <div *ngIf="eMail.errors.required">
+                  E-mail is required field.
+                </div>
+
+                <div *ngIf="eMail.errors.pattern">
+                  Invalid E-mail, Please enter a valid one.
+                </div>
+
+              </div>
+            </div>
+
+            <!-- mobile number -->
+            <div class="form-group">
+              <label class="labels " for="mobile">Mobile Number</label>
+              <input class="form-control" type="tel" placeholder="01234567890" required maxlength="11" pattern="(01)[0-9]{9}" name="mobile"
+                required id="mobile" ngModel #mobileNumber="ngModel">
+
+              <div *ngIf="mobileNumber.errors && (mobileNumber.dirty || mobileNumber.touched)" class="alert alert-info">
+                <div *ngIf="mobileNumber.errors.required">
+                  Mobile number is required field.
+                </div>
+                <div *ngIf="mobileNumber.errors.pattern">
+                  invalid.
+                </div>
+              </div>
+            </div>
+            <!--university -->
+            <div class="form-group">
+              <label class="labels " for="university">University</label>
+              <input class="form-control" type="text" id="university" placeholder="Enter Your University" required pattern="[a-zA-Z ]*"
+                ngModel name="university" class="form-control" #University="ngModel">
+
+              <div *ngIf="University.errors && (University.dirty || University.touched)" class="alert alert-info">
+                <div *ngIf="University.errors.required">
+                  University is a required field.
+                </div>
+                <div *ngIf="University.errors.pattern">
+                  invalid, you must enter characters only.
+                </div>
+              </div>
+            </div>
+            <!-- faculty -->
+            <div class="form-group">
+              <label class="labels " for="faculty">Faculty</label>
+              <input class="form-control" type="text" id="faculty" placeholder="Enter Your Faculty" required pattern="[a-zA-Z ]*" ngModel
+                name="faculty" class="form-control" #Faculty="ngModel">
+
+              <div *ngIf="Faculty.errors && (Faculty.dirty || Faculty.touched)" class="alert alert-info">
+                <div *ngIf="Faculty.errors.required">
+                  Faculty is a required field.
+                </div>
+                <div *ngIf="Faculty.errors.pattern">
+                  invalid, you must enter characters only.
+                </div>
+              </div>
+            </div>
+
+            <!-- year-->
+            <div class="form-group">
+              <label class="labels " for="graduationYear">Expected Graduation Year</label>
+              <input class="form-control" type="text" id="graduationYear" placeholder="2018" required maxlength="4" pattern="(201[7-9]|202[0-9])"
+                ngModel name="graduationYear" class="form-control" #Expected_GraduationYear="ngModel">
+
+              <div *ngIf="Expected_GraduationYear.errors && (Expected_GraduationYear.dirty || Expected_GraduationYear.touched)" class="alert alert-info">
+                <div *ngIf="Expected_GraduationYear.errors.required">
+                  Graduation Year is a required field.
+                </div>
+                <div *ngIf="Expected_GraduationYear.errors.pattern">
+                  Invalid Year.
+                </div>
+
+              </div>
+            </div>
+
+            <!--Parent 1 name-->
+            <div class="form-group">
+              <label class="labels " for="parent1name">Parent 1 Name:</label>
+              <input class="form-control" type="text" placeholder="Parent 1 Name" required pattern="[a-zA-Z ]*" minlength="3" name="parent1name"
+                required ngModel id="parent1name" #parent1Name="ngModel">
+
+              <div *ngIf="parent1Name.errors && (parent1Name.dirty || parent1Name.touched)" class="alert alert-info">
+                <div *ngIf="parent1Name.errors.required">
+                  Parent Name is required.
+                </div>
+
+                <div *ngIf="parent1Name.errors.pattern">
+                  Parent Name accept only characters.
+                </div>
+
+                <div *ngIf="parent1Name.errors.minlength">
+                  Parent Name should be more than 2 characters.
+                </div>
+
+              </div>
+            </div>
+
+            <!--Parent 1 mobile-->
+            <div class="form-group">
+              <label class="labels " for="parent1mobile">Mobile Number</label>
+              <input class="form-control" type="tel" placeholder="01234567890" required maxlength="11" pattern="(01)[0-9]{9}" name="parent1mobile"
+                required id="parent1mobile" ngModel #parent1Mobile="ngModel">
+
+              <div *ngIf="parent1Mobile.errors && (parent1Mobile.dirty || parent1Mobile.touched)" class="alert alert-info">
+                <div *ngIf="parent1Mobile.errors.required">
+                  Mobile number is required field.
+                </div>
+                <div *ngIf="parent1Mobile.errors.pattern">
+                  invalid.
+                </div>
+              </div>
+            </div>
+
+
+            <!--Parent 2 Name-->
+            <div class="form-group">
+              <label class="labels " for="parent2name">Parent 2 Name:</label>
+              <input class="form-control" type="text" placeholder="Parent 2 Name" pattern="[a-zA-Z ]*" minlength="3" name="parent2name"
+                ngModel id="parent2name" #parent2Name="ngModel">
+
+              <div *ngIf="parent2Name.errors && (parent2Name.dirty || parent2Name.touched)" class="alert alert-info">
+
+                <div *ngIf="parent2Name.errors.pattern">
+                  Parent Name accept only characters.
+                </div>
+
+                <div *ngIf="parent2Name.errors.minlength">
+                  Parent Name should be more than 2 characters.
+                </div>
+
+              </div>
+            </div>
+
+            <!--Parent 2 mobile-->
+            <div class="form-group">
+              <label class="labels " for="parent2mobile">Mobile Number</label>
+              <input class="form-control" type="tel" placeholder="01234567890" maxlength="11" pattern="(01)[0-9]{9}" name="parent2mobile"
+                id="parent2mobile" ngModel #parent2Mobile="ngModel">
+
+              <div *ngIf="parent2Mobile.errors && (parent2Mobile.dirty || parent2Mobile.touched)" class="alert alert-info">
+                <div *ngIf="parent2Mobile.errors.pattern">
+                  invalid.
+                </div>
+              </div>
+            </div>
+
+
+            <!-- national id -->
+            <div class="form-group">
+              <label class="labels " for="nationalId">NationalID</label>
+              <input class="form-control" type="text" placeholder="National ID" required minlength="14" maxlength="14" ngModel name="nationalId"
+                class="form-control" #nationalId="ngModel" id="nationalId">
+
+              <div *ngIf="nationalId.errors && (nationalId.dirty || nationalId.touched)" class="alert alert-info">
+                <div *ngIf="nationalId.errors.required">
+                  NationalID is a required field.
+                </div>
+              </div>
+            </div>
+
+
+            <!-- Passport id -->
+            <div class="form-group">
+              <label class="labels " for="passportId">Passport ID</label>
+              <input class="form-control" type="text" placeholder="Passport ID" ngModel name="passportId" class="form-control" #passportId="ngModel"
+                id="passportId">
+
+              <div *ngIf="passportId.errors && (passportId.dirty || passportId.touched)" class="alert alert-info">
+              </div>
+            </div>
+
+            <!-- Driving id -->
+            <div class="form-group">
+              <label class="labels " for="drivingId">Driving ID</label>
+              <input class="form-control" type="text" placeholder="Driving ID" ngModel name="drivingId" class="form-control" #drivingId="ngModel"
+                id="nationalId">
+
+              <div *ngIf="drivingId.errors && (drivingId.dirty || drivingId.touched)" class="alert alert-info">
+              </div>
+            </div>
+
+            <!--Selection Box-->
+            <div class="form-group">
+              <label class="labels " for="teamDepartment">Team Department</label>
+              <select name="teamDepartment" class="custom-select" id="teamDepartment" ngModel #teamDepartment="ngModel" required>
+                <option value="managment">Managment</option>
+                <option value="technical">Technical</option>
+              </select>
+
+              <div *ngIf="teamDepartment.errors && (teamDepartment.dirty || teamDepartment.touched)" class="alert alert-info">
+                <div *ngIf="teamDepartment.errors.required">Choose Your Department</div>
+              </div>
+            </div>
+            <div class="form-group" *ngIf="teamDepartment.value === 'technical' ">
+
+              <!--Weight-->
+              <div class="form-group">
+                <label class="labels " for="weight">Weight</label>
+                <input class="form-control" type="text" placeholder="Weight" required minlength="2" maxlength="3" ngModel name="weight" class="form-control"
+                  #weight="ngModel" id="weight">
+
+                <div *ngIf="weight.errors && (weight.dirty || weight.touched)" class="alert alert-info">
+                  <div *ngIf="weight.errors.required">
+                    Weight is a required field if you choose Technical Department.
+                  </div>
+                  <div *ngIf="weight.errors.minlength">
+                    Write A valid weight in Kgs.
+                  </div>
+                </div>
+              </div>
+              <!--Height-->
+              <div class="form-group">
+                <label class="labels " for="height">Height</label>
+                <input class="form-control" type="text" placeholder="Height" required minlength="3" maxlength="3" ngModel name="height" class="form-control"
+                  #height="ngModel" id="height">
+
+                <div *ngIf="height.errors && (height.dirty || height.touched)" class="alert alert-info">
+                  <div *ngIf="height.errors.required">
+                    Height is a required field if you choose Technical Department.
+                  </div>
+                  <div *ngIf="height.errors.minlength">
+                    Write A valid Height in cms.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+            <!--profile picture-->
+            <div class="form-group">
+              <i class="fa fa-user-o icon" aria-hidden="true"></i>
+              <label class="labels " for="ProfilePicture">Profile Picture
+                <span>size
+                  < 500 KB</span>
+              </label>
+              <br>
+              <input class="form-control" type="file" name="ProfilePicture" class="form-control" accept="image/*" (change)="convertPhoto($event.target)">
+              <div *ngIf="profileEmpty" class="alert alert-info">
+                Upload a Photo.
+              </div>
+              <div *ngIf="profileSize" class="alert alert-info">
+                Size > 510 kB.
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div *ngIf="emailExists" class="alert alert-danger">
+                Email Exists, please login or change your Email
+              </div>
+              <div *ngIf="mobileExists" class="alert alert-danger">
+                Mobile Exists, please login.
+              </div>
+              <div *ngIf="nationalIDExists" class="alert alert-danger">
+                National ID Exists, please login.
+              </div>
+              <button type="submit" class="btn btn-primary btn-lg btn-block" [disabled]="!form.valid">Submit</button>
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  <br>
+</div>

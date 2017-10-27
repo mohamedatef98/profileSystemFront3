@@ -1,0 +1,11 @@
+<div class="card" style="width: 20rem;">
+    <img class="card-img-top" src="{{profile.profilePic}}" alt="Card image cap" style="max-height : 300px">
+    <div class="card-block">
+        <h4 class="card-title">{{profile.fname}} {{profile.mname}} {{profile.lname}}</h4>
+        <p>
+            <i class="fa fa-desktop" aria-hidden="true" *ngIf = "profile.teamDepartment === 'managment' "></i>
+            <i class="fa fa-cog" aria-hidden="true" *ngIf = "profile.teamDepartment === 'technical'"></i>
+        </p>
+        <a href="#" class="btn btn-primary">edit</a>
+    </div>
+</div>
