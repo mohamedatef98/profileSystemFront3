@@ -78,6 +78,9 @@
 
               </div>
             </div>
+
+
+
             <!-- email-->
             <div class="form-group">
               <label class="labels " for="email">E-mail:</label>
@@ -111,6 +114,21 @@
                 </div>
               </div>
             </div>
+
+            <!-- Address -->
+            <div class="form-group">
+              <label class="labels " for="address">Address</label>
+              <input class="form-control" type="text" placeholder="Address" required ngModel name="address" class="form-control" #address="ngModel"
+                id="address">
+
+              <div *ngIf="address.errors && (address.dirty || nationalId.address)" class="alert alert-info">
+                <div *ngIf="nationalId.errors.required">
+                  address is a required field.
+                </div>
+              </div>
+            </div>
+
+
             <!--university -->
             <div class="form-group">
               <label class="labels " for="university">University</label>
@@ -126,17 +144,34 @@
                 </div>
               </div>
             </div>
+
+
+
             <!-- faculty -->
             <div class="form-group">
               <label class="labels " for="faculty">Faculty</label>
               <input class="form-control" type="text" id="faculty" placeholder="Enter Your Faculty" required pattern="[a-zA-Z ]*" ngModel
                 name="faculty" class="form-control" #Faculty="ngModel">
-
               <div *ngIf="Faculty.errors && (Faculty.dirty || Faculty.touched)" class="alert alert-info">
                 <div *ngIf="Faculty.errors.required">
                   Faculty is a required field.
                 </div>
                 <div *ngIf="Faculty.errors.pattern">
+                  invalid, you must enter characters only.
+                </div>
+              </div>
+            </div>
+
+            <!-- collegeDeparment -->
+            <div class="form-group">
+              <label class="labels " for="collegeDepartment">College Department</label>
+              <input class="form-control" type="text" id="collegeDepartment" placeholder="Enter Your College Department" required pattern="[a-zA-Z ]*"
+                ngModel name="collegeDepartment" class="form-control" #collegeDepartment="ngModel">
+              <div *ngIf="collegeDepartment.errors && (collegeDepartment.dirty || collegeDepartment.touched)" class="alert alert-info">
+                <div *ngIf="collegeDepartment.errors.required">
+                  College Department is a required field.
+                </div>
+                <div *ngIf="collegeDepartment.errors.pattern">
                   invalid, you must enter characters only.
                 </div>
               </div>
@@ -158,6 +193,20 @@
 
               </div>
             </div>
+
+            <!-- college id -->
+            <div class="form-group">
+              <label class="labels" for="collegeId">College ID</label>
+              <input class="form-control" type="text" placeholder="College ID" required ngModel name="collegeId" class="form-control" #collegeID="ngModel"
+                id="collegeId">
+
+              <div *ngIf="collegeID.errors && (collegeID.dirty || collegeID.touched)" class="alert alert-info">
+                <div *ngIf="collegeID.errors.required">
+                  College ID is a required field.
+                </div>
+              </div>
+            </div>
+
 
             <!--Parent 1 name-->
             <div class="form-group">
@@ -241,6 +290,9 @@
                 <div *ngIf="nationalId.errors.required">
                   NationalID is a required field.
                 </div>
+                <div *ngIf="nationalId.errors.minlength">
+                  NationalID should be 14 characters.
+                </div>
               </div>
             </div>
 
@@ -272,12 +324,19 @@
                 <option value="managment">Managment</option>
                 <option value="technical">Technical</option>
               </select>
+              <label for="haveAcar" class="labels ">Do You Have A Car ?
+              <input class="custom-control-input" type="checkbox"  ngModel name="haveAcar" class="form-control"
+              #haveAcar="ngModel" id="haveAcar">
+            </label>
 
               <div *ngIf="teamDepartment.errors && (teamDepartment.dirty || teamDepartment.touched)" class="alert alert-info">
                 <div *ngIf="teamDepartment.errors.required">Choose Your Department</div>
               </div>
             </div>
+
+            <!--The Part of Height and weight which exists only if the choosen team department is technical-->
             <div class="form-group" *ngIf="teamDepartment.value === 'technical' ">
+
 
               <!--Weight-->
               <div class="form-group">
@@ -294,6 +353,8 @@
                   </div>
                 </div>
               </div>
+
+
               <!--Height-->
               <div class="form-group">
                 <label class="labels " for="height">Height</label>
@@ -318,37 +379,18 @@
               <i class="fa fa-user-o icon" aria-hidden="true"></i>
               <label class="labels " for="ProfilePicture">Profile Picture
                 <span>size
-                  < 500 KB</span>
+                  smaller 500 KB</span>
               </label>
               <br>
               <input class="form-control" type="file" name="ProfilePicture" class="form-control" accept="image/*" (change)="convertPhoto($event.target)">
-              <div *ngIf="profileEmpty" class="alert alert-info">
-                Upload a Photo.
-              </div>
-              <div *ngIf="profileSize" class="alert alert-info">
-                Size > 510 kB.
-              </div>
             </div>
 
-            <div class="form-group">
-              <div *ngIf="emailExists" class="alert alert-danger">
-                Email Exists, please login or change your Email
-              </div>
-              <div *ngIf="mobileExists" class="alert alert-danger">
-                Mobile Exists, please login.
-              </div>
-              <div *ngIf="nationalIDExists" class="alert alert-danger">
-                National ID Exists, please login.
-              </div>
-              <button type="submit" class="btn btn-primary btn-lg btn-block" [disabled]="!form.valid">Submit</button>
+            <!--Submit Button-->
+            <button type="submit" class="btn btn-primary btn-lg btn-block" [disabled]="!form.valid">Submit</button>
 
-            </div>
+
           </form>
         </div>
       </div>
     </div>
-
-
   </div>
-  <br>
-</div>

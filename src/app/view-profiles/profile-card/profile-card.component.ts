@@ -6,6 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./profile-card.component.css']
 })
 export class ProfileCardComponent implements OnInit {
+  //Custom Property Binding to get each profile from the viewProfiles component
   @Input() profile:any;
 
   constructor() { }

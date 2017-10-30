@@ -6,6 +6,6 @@
             <i class="fa fa-desktop" aria-hidden="true" *ngIf = "profile.teamDepartment === 'managment' "></i>
             <i class="fa fa-cog" aria-hidden="true" *ngIf = "profile.teamDepartment === 'technical'"></i>
         </p>
-        <a href="#" class="btn btn-primary">edit</a>
+        <a href="/profiles/{{profile.id}}" class="btn btn-primary">edit</a>
     </div>
 </div>

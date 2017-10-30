@@ -2,14 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import {HttpClientModule} from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { AddProfileComponent } from './add-profile/add-profile.component';
 import { ViewProfilesComponent } from './view-profiles/view-profiles.component';
+import { EditProfileComponent } from './view-profiles/profile-card/edit-profile/edit-profile.component';
 import { ProfileCardComponent } from './view-profiles/profile-card/profile-card.component';
-import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 @NgModule({
@@ -25,11 +24,11 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    HttpClientModule,
     RouterModule.forRoot([
-      { path: 'view-profiles', component: ViewProfilesComponent },
+      { path: 'profiles', component: ViewProfilesComponent },
+      { path: 'profiles/:id', component: EditProfileComponent },
       { path: 'add-profile', component: AddProfileComponent },
-      { path: 'edit-profile', component: EditProfileComponent }
+      
     ]),
   ],
   providers: [],
