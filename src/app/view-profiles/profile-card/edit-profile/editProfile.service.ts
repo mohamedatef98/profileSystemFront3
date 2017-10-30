@@ -8,17 +8,17 @@ import { HttpHeaders } from '@angular/common/http';
 @Injectable()
 export class EditProfile {
     constructor(private http: Http) { }
+
     
 
     //This method is executed when submitting the edit form
     editProfile(data:any,iD:number){
-        data = data.value + {id:iD};
 
         //headers to specify the sent data type
         var headers = new Headers();
         headers.append('Content-Type', 'application/json');
 
-        this.http.put("http://127.0.0.1:8000/persons/.json'",
+        this.http.put("http://127.0.0.1:8000/ASUmembers/"+iD+"/",
         JSON.stringify(data),
         {headers:headers}).subscribe();
 
