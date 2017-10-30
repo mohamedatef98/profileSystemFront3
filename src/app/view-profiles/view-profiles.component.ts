@@ -12,10 +12,9 @@ export class ViewProfilesComponent implements OnInit {
   profiles = [];
 
   constructor(private http:Http){
-    this.http.get('http://127.0.0.1:8000/persons/')
+    this.http.get('http://127.0.0.1:8000/ASUmembers/')
     .subscribe(response => {
-        this.profiles = response.json();
-            }
+        this.profiles = response.json();}
         )
     
   }
