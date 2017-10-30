@@ -17,7 +17,7 @@ export class SubmitForm {
         headers.append('Content-Type', 'application/json');
 
         //the POST request
-        this.http.post("http://127.0.0.1:8000/persons/.json'",
+        this.http.post("http://127.0.0.1:8000/ASUmembers/",
         JSON.stringify(data),
         {headers:headers}).subscribe();
     }
