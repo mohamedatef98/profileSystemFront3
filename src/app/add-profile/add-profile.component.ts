@@ -35,25 +35,23 @@ submitForm(data){
 
 
   if(data.value.teamDepartment === 'managment'){
-    data.value.weight = Number(0);
-    data.value.height = Number(0);
+    data.value.Weight = Number(0);
+    data.value.Height = Number(0);
   }
   else{
-    data.value.weight = Number(data.value.weight);
-    data.value.height = Number(data.value.height);
+    data.value.Weight = Number(data.value.Weight);
+    data.value.Height = Number(data.value.Height);
   }
 
 
-  if(data.value.parent2mobile === ''){
-    data.value.parent2mobile = Number(0);
-  }
-  else{
-    data.value.parent2mobile = Number(data.value.parent2mobile);
-  }
+  
   
   data.value.graduationYear = Number(data.value.graduationYear);
+  console.log(data);
+  this.service.submitForm(data.value);
 
   } 
+  
 
 
   ngOnInit() {
